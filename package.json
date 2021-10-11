@@ -1,0 +1,26 @@
+{
+  "name": "final-delivery",
+  "version": "1.0.0",
+  "description": "TO NOTE\r Store collateral and provide interest MXX or burn MXX <br />\r Interest (contractFee, penaltyFee etc) is always represented 10 power 6 times the actual value<br />\r Note that only 4 decimal precision is allowed for interest<br />\r If interest is 5%, then value to input is 0.05 * 10 pow 6 = 5000<br />\r mFactor or mintFactor is represented 10 power 18 times the actual value.<br />\r If value of 1 ETH is 380 USD, then mFactor of ETH is (380 * (10 power 18))<br />\r Collateral should always be in its lowest denomination (based on the coin or Token)<br />\r If collateral is 6 USDT, then value is 6 * (10 power 6) as USDT supports 6 decimals<br />\r startTime and endTime are represented in Unix time<br />\r tenure for contract is represented in days (90, 180, 270) etc<br />\r mxxToBeMinted or mxxToBeMinted is always in its lowest denomination (8 decimals)<br />\r For e.g if mxxToBeMinted = 6 MXX, then actual value is 6 * (10 power 8)<br />",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "solhint": "./node_modules/.bin/solhint -f table contracts/*.sol",
+    "prettier:solidity": "./node_modules/.bin/prettier --write contracts/*.sol"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.1.0",
+    "ganache": "^6.4.4",
+    "ganache-cli": "^6.10.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.1.1",
+    "prettier-plugin-solidity": "^1.0.0-alpha.56",
+    "solhint": "^3.2.0",
+    "solhint-plugin-prettier": "0.0.5"
+  }
+}
